@@ -22,8 +22,7 @@ web scraping tool in order to quickly read the article.
      
      [https://newspaper.readthedocs.io/en/stable/user_guide/install.html](url)
      
-  5. After imports have been resolved, run the program, and the GUI interface will open. If there are issues with import resolution, make sure that         
-     the interpreter is set correctly.
+  5. After imports have been resolved, run the program, and the GUI interface will open. If there are issues with import resolution, make sure that the interpreter is set correctly.
 
 **Final Notes:** Feel free to ask any questions or recommend any changes! Special thanks to the creators of each of the aforementioned libraries for making this program possible.
 
