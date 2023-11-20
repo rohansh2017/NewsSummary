@@ -5,7 +5,8 @@ from textblob import TextBlob
 from newspaper import Article
 
 def summarize():
-
+    
+    # Read the url and download, parse, and analyze it using the imported libraries.
     url = utext.get('1.0', "end").strip()
 
     article = Article(url)
@@ -13,6 +14,7 @@ def summarize():
     article.parse()
     article.nlp()
 
+    # Work with tkinter to configure each of the text boxes and add in the parsed information.
     title.config(state = 'normal')
     author.config(state = 'normal')
     publication.config(state = 'normal')
@@ -33,6 +35,7 @@ def summarize():
     summary.delete('1.0', 'end')
     summary.insert('1.0', article.summary)
 
+    #insert the appropriate sentiment text using polarity analysis. 
     analysis = TextBlob(article.text)
     sentiment.delete('1.0', 'end')
     sentiment.insert('1.0', f'Polarity: {analysis.polarity}, Sentiment: {"positive" if analysis.polarity > 0 else "negative" if analysis.polarity < 0 else "neutral"}')
@@ -46,7 +49,8 @@ def summarize():
     summary.config(state = 'disabled')
     sentiment.config(state = 'disabled')
     keywords.config(state = 'disabled')
-    
+
+# Create a window and add the necessary labels, textboxes, buttons with pre-chosen colors.   
 root = tk.Tk()
 root.title("News Summarizer")
 root.geometry('1200x730')
